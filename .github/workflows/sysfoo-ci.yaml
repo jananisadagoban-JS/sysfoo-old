@@ -1,0 +1,27 @@
+name: sysfoo-ci
+on: push
+jobs:
+  sysfoo-ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sysfoo-ci-name
+        run: echo "Welcome to Sysfoo Application"
+        
+      - name: code checkout
+        uses: actions/checkout@v6
+        
+      - name: Test
+        run: mvn test
+        
+      - name: Clean Package
+        run: mvn clean
+        
+      - name: Install Package
+        run: mvn package
+
+      - name: View the files
+        run: ls -lrt
+
+        
+
+        
